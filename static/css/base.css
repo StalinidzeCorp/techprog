@@ -1,3 +1,7 @@
+@font-face {
+  font-family: "Aptos";
+  src: url("fonts/aptos.ttf");
+}
 :root {
   --clr1: #ddd;
   --clr2: #efefef;
@@ -25,6 +29,7 @@ body *, body :after, body :before {
   min-width: 360px;
   margin: 0 auto;
   position: relative;
+  min-height: 100vh;
 }
 .wrap.sticky {
   margin-top: 150px;
@@ -59,25 +64,29 @@ header {
   max-width: 100% !important;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+}
 header .logo {
-  background: var(--clr1);
   width: 50px;
   height: 50px;
   border-radius: var(--text-radius);
 }
-header nav {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(-50px, -50%);
-}
-header nav ul li {
-  display: inline-block;
+header nav ul {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
   list-style: none;
-  width: 60px;
-  height: 10px;
-  background: var(--clr1);
   border-radius: var(--text-radius);
+}
+header nav ul a {
+  text-decoration: none;
+  line-height: 1;
+  color: #5d5d5d;
+}
+header nav ul a:hover {
+  text-decoration: underline;
 }
 
 section {
@@ -158,17 +167,23 @@ footer {
   position: relative;
   margin: 10px 0 0 0;
 }
-footer .logo {
-  width: 50px;
+footer .name {
+  width: 500px;
   height: 50px;
   color: var(--clr1);
   border-radius: var(--text-radius);
+  display: flex;
+  align-items: center;
+}
+footer .name p {
+  margin: 0;
 }
 footer nav {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translate(-50px, -50%);
+  color: var(--clr1);
 }
 footer nav ul li {
   display: inline-block;
@@ -197,6 +212,7 @@ body, html {
 
 body {
   background: var(--clr4);
+  font-family: Aptos, Arial, serif;
   text-rendering: optimizelegibility;
   margin: 0px;
   padding: 0px;
@@ -220,7 +236,6 @@ body.tight .wrapper {
   width: 90%;
   max-width: 1440px;
   margin: 0px auto;
-  text-align: center;
   margin-bottom: 50px;
 }
 

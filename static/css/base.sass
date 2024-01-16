@@ -1,3 +1,8 @@
+@font-face
+  font-family: 'Aptos'
+  src: url("fonts/aptos.ttf")
+
+
 \:root
   --clr1: #ddd
   --clr2: #efefef
@@ -21,6 +26,7 @@ body
   min-width: 360px
   margin: 0 auto
   position: relative
+  min-height: 100vh
   &.sticky
     margin-top: 150px
     /* set height from header
@@ -50,23 +56,26 @@ header
   max-width: 100% !important
 
 header
+  display: flex
+  justify-content: space-between
   .logo
-    background: var(--clr1)
     width: 50px
     height: 50px
     border-radius: var(--text-radius)
   nav
-    position: absolute
-    right: 0
-    top: 50%
-    transform: translate(-50px, -50%)
-    ul li
-      display: inline-block
+    ul
+      display: flex
+      justify-content: space-between
+      gap: 30px
+      li
       list-style: none
-      width: 60px
-      height: 10px
-      background: var(--clr1)
       border-radius: var(--text-radius)
+      a
+        text-decoration: none
+        line-height: 1
+        color: #5d5d5d
+        &:hover
+          text-decoration: underline
 
 section
   background: var(--clr2)
@@ -133,16 +142,21 @@ footer
   border-radius: var(--border-radius) var(--border-radius) 0px 0px
   position: relative
   margin: 10px 0 0 0
-  .logo
-    width: 50px
+  .name
+    width: 500px
     height: 50px
     color: var(--clr1)
     border-radius: var(--text-radius)
+    display: flex
+    align-items: center
+    p
+      margin: 0
   nav
     position: absolute
     right: 0
     top: 50%
     transform: translate(-50px, -50%)
+    color: var(--clr1)
     ul li
       display: inline-block
       list-style: none
@@ -167,6 +181,7 @@ body, html
 
 body
   background: var(--clr4)
+  font-family: Aptos, Arial, serif
   text-rendering: optimizelegibility
   margin: 0px
   padding: 0px
@@ -187,7 +202,6 @@ body.tight .wrapper
   width: 90%
   max-width: 1440px
   margin: 0px auto
-  text-align: center
   margin-bottom: 50px
 
 @keyframes bounce

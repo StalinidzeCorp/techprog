@@ -1,3 +1,4 @@
+{% load static %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -6,73 +7,39 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Python developer</title>
-    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
 <body>
+    {% block header %}
     <div class="wrapper">
         <div class="wrap">
             <div class="arrow animated bounce"></div>
-                <header>   
-                    <div class="logo"></div>
-                    <nav>
-                      <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                      </ul>
-                    </nav>
-                </header>
-                <section class="transparent">
-                <div class="headline"></div>
-                <div class="text"></div>
-                <div class="text"></div>
-                <div class="button"></div>
-                </section> 
-                <section class="cards">
-                <div class="card">
-                  <img src="https://imgplaceholder.com/500x300/transparent/ddd/ion-image" alt="">
-                  <div class="content">
-                    <div class="headline"></div>
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="button"></div>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="https://imgplaceholder.com/500x300/transparent/ddd/ion-image" alt="">
-                  <div class="content">
-                    <div class="headline"></div>
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="button"></div>
-                  </div>
-                </div>
-                <div class="card">
-                  <img src="https://imgplaceholder.com/500x300/transparent/ddd/ion-image" alt="">
-                  <div class="content">
-                    <div class="headline"></div>
-                    <div class="text"></div>
-                    <div class="text"></div>
-                    <div class="button"></div>
-                  </div>
-                </div>
-                </section>
-                <section class="contentbox">
-                <div class="headline"></div>
-                <div class="text"></div>
-                <div class="text"></div>
-                <div class="text"></div>
-                <div class="button"></div>
-                </section>
+            <header>
+                <img src="{% static 'img/logo.png' %}" alt="">
+                <nav>
+                  <ul>
+                    <li><a href="{% url 'index' %}">ГЛАВНАЯ</a></li>
+                    <li><a href="{% url 'demand' %}">ВОСТРЕБОВАННОСТЬ</a></li>
+                    <li><a href="{% url 'geography' %}">ГЕОГРАФИЯ</a></li>
+                    <li><a href="{% url 'skills' %}">НАВЫКИ</a></li>
+                    <li><a href="{% url 'latest' %}">ПОСЛЕДНИЕ</a></li>
+                  </ul>
+                </nav>
+            </header>
+            {% block content %}
+            {% endblock %}
         </div>
     </div>
+    {% endblock %}
+    {% block footer %}
     <footer class="footer">
-        <div class="logo">Кузьмин Никита Андреевич РИ-220948</div>
+        <div class="name"><p>Кузьмин Никита Андреевич, РИ-220948</p></div>
         <nav>
             УрФУ, ИРИТ-РТФ, Технологии программирования на Python
         </nav>
     </footer>
+    {% endblock %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="base.js"></script>
+    <script src="{% static 'js/base.js' %}"></script>
 </body>
 </html>
