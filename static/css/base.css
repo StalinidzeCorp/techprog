@@ -98,21 +98,24 @@ section {
   margin: 10px 0 0 0;
 }
 section .headline {
+  font-size: 64px;
+  font-weight: 700;
+  text-align: center;
   display: block;
   margin: 0 auto;
+  margin-bottom: 100px;
   list-style: none;
-  max-width: 260px;
-  height: 30px;
-  background: var(--clr1);
-  border-radius: var(--text-radius);
+  max-width: 960px;
+  color: var(--clr1);
 }
 section .text {
+  font-size: 24px;
   display: block;
   margin: 10px auto;
-  max-width: 500px;
-  height: 14px;
-  background: var(--clr1);
-  border-radius: var(--text-radius);
+  max-width: 960px;
+  background-color: var(--clr1);
+  padding: 10px;
+  border-radius: 15px;
 }
 section .button {
   display: block;
@@ -121,6 +124,10 @@ section .button {
   height: 35px;
   background: var(--clr1);
   border-radius: var(--text-radius);
+}
+section .index-img {
+  max-width: 860px;
+  border-radius: 15px;
 }
 section.contentbox .headline {
   margin: 10px 0 !important;
@@ -166,6 +173,7 @@ footer {
   border-radius: var(--border-radius) var(--border-radius) 0px 0px;
   position: relative;
   margin: 10px 0 0 0;
+  font-size: 20px;
 }
 footer .name {
   width: 500px;
