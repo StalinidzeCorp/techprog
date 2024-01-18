@@ -4,12 +4,15 @@
         <div class="card-latest">
             <p class="title">{{ item.name }}</p>
             <div class="description">{{ item.description|safe }}</div>
-            <p class="skills"><strong>Навыки: </strong>{{ item.skills }}</p>
-            <p class="company"><strong>Компания: </strong>{{ item.company }}</p>
-            <p class="salary"><strong>Оклад: </strong>{{ item.salary }} ₽</p>
-            <p class="address"><strong>Регион: </strong>{{ item.address }}</p>
-            <p class="published"><strong>Дата: </strong>{{ item.published_at }} МСК</p>
-            <a href="{{ item.url }}" class="goto">Перейти</a>
+            <hr>
+            <div class="itm-wrap">
+                <p class="skills"><strong>Навыки: </strong>{{ item.skills }}</p>
+                <p class="company"><strong>Компания: </strong>{{ item.company }}</p>
+                <p class="salary"><strong>Оклад: </strong>{{ item.salary }} {{ item.currency }}</p>
+                <p class="address"><strong>Регион: </strong>{{ item.address }}</p>
+                <p class="published"><strong>Дата: </strong>{{ item.published_at }} МСК</p>
+            </div>
+            <div class="btn-wrap"><a href="{{ item.url }}" class="goto">Перейти</a></div>
         </div>
     {% endfor %}
 {% endblock %}
