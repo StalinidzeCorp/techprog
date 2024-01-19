@@ -6,32 +6,33 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Python developer</title>
+    <title>{% block title %}{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="icon" type="image/x-icon" href="{% static 'img/logo.png' %}">
 </head>
 <body>
-    {% block header %}
     <div class="wrapper">
         <div class="wrap">
             <div class="arrow animated bounce"></div>
-            <header>
-                <img src="{% static 'img/logo.png' %}" alt="">
-                <nav>
-                  <ul>
-                    <li><a href="{% url 'index' %}">ГЛАВНАЯ</a></li>
-                    <li><a href="{% url 'demand' %}">ВОСТРЕБОВАННОСТЬ</a></li>
-                    <li><a href="{% url 'geography' %}">ГЕОГРАФИЯ</a></li>
-                    <li><a href="{% url 'skills' %}">НАВЫКИ</a></li>
-                    <li><a href="{% url 'latest' %}">ПОСЛЕДНИЕ</a></li>
-                  </ul>
-                </nav>
-            </header>
+            {% block header %}
+                <header>
+                    <img src="{% static 'img/logo.png' %}" alt="">
+                    <nav>
+                      <ul>
+                        <li><a href="{% url 'index' %}">ГЛАВНАЯ</a></li>
+                        <li><a href="{% url 'demand' %}">ВОСТРЕБОВАННОСТЬ</a></li>
+                        <li><a href="{% url 'geography' %}">ГЕОГРАФИЯ</a></li>
+                        <li><a href="{% url 'skills' %}">НАВЫКИ</a></li>
+                        <li><a href="{% url 'latest' %}">ПОСЛЕДНИЕ</a></li>
+                      </ul>
+                    </nav>
+                </header>
+            {% endblock %}
             {% block content %}
             {% endblock %}
         </div>
     </div>
-    {% endblock %}
+    
     {% block footer %}
     <footer class="footer">
         <div class="name"><p>Кузьмин Никита Андреевич, РИ-220948</p></div>

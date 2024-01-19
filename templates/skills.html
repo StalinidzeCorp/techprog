@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% block title %}pythonDev - {{ skills_page.title }}{% endblock %}
 {% block content %}
-    <p>Навыки</p>
+    <section class="transparent">
+        <div class="container">
+            {{ skills_page.body|safe }}
+        </div>
+    </section>
 {% endblock %}

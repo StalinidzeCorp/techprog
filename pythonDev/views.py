@@ -1,11 +1,17 @@
 from datetime import datetime
-
 from django.shortcuts import render
+from django.views.generic import DetailView
+
+from .models import PageContent
 import requests
 
 
 def index(request):
-    return render(request, 'index.html')
+    try:
+        index_page = PageContent.objects.get(title='Главная')
+    except:
+        index_page = PageContent.objects.get(title='404')
+    return render(request, 'index.html', {'index_page': index_page})
 
 
 def demand(request):
@@ -17,7 +23,11 @@ def geography(request):
 
 
 def skills(request):
-    return render(request, 'skills.html')
+    try:
+        skills_page = PageContent.objects.get(title='Навыки')
+    except:
+        skills_page = PageContent.objects.get(title='404')
+    return render(request, 'skills.html', {'skills_page': skills_page})
 
 
 def latest(request):
@@ -58,3 +68,8 @@ def latest(request):
         }
         lst.append(item)
     return render(request, 'latest.html', {'items': lst})
+
+
+
+
+

@@ -46,7 +46,6 @@ header {
   width: 100%;
   border-radius: var(--border-radius);
   position: relative;
-  z-index: 99;
 }
 
 .wrap.sticky header {
@@ -91,7 +90,6 @@ header nav ul a:hover {
 
 section {
   background: var(--clr2);
-  padding: 100px 50px;
   width: 100%;
   border-radius: var(--border-radius);
   position: relative;
@@ -107,6 +105,23 @@ section .headline {
   list-style: none;
   max-width: 960px;
   color: var(--clr1);
+  padding-top: 100px;
+}
+section .container {
+  max-width: 960px;
+  border-radius: 7px;
+  background-color: var(--clr2);
+  padding: 15px;
+  font-size: 20px;
+}
+section .container img {
+  display: block;
+  width: 100%;
+  border-radius: 7px;
+  transition: 0.3s;
+}
+section .container img:hover {
+  transform: scale(1.5);
 }
 section .text {
   font-size: 24px;
