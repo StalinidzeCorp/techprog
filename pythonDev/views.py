@@ -15,11 +15,19 @@ def index(request):
 
 
 def demand(request):
-    return render(request, 'demand.html')
+    try:
+        demand_page = PageContent.objects.get(title='Востребованность')
+    except:
+        demand_page = PageContent.objects.get(title='404')
+    return render(request, 'demand.html', {'demand_page': demand_page})
 
 
 def geography(request):
-    return render(request, 'geography.html')
+    try:
+        geography_page = PageContent.objects.get(title='География')
+    except:
+        geography_page = PageContent.objects.get(title='404')
+    return render(request, 'geography.html', {'geography_page': geography_page})
 
 
 def skills(request):

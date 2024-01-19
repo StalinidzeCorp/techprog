@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% block title %}pythonDev - {{ geography_page.title }}{% endblock %}
 {% block content %}
-    <p>География</p>
+    <section class="transparent">
+        <div class="container">
+            {{ geography_page.body|safe }}
+        </div>
+    </section>
 {% endblock %}

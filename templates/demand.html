@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% block title %}pythonDev - {{ demand_page.title }}{% endblock %}
 {% block content %}
-    <p>Востребованность</p>
+    <section class="transparent">
+        <div class="container">
+            {{ demand_page.body|safe }}
+        </div>
+    </section>
 {% endblock %}
